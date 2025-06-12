@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-dark-800 dark:text-white transition-colors duration-300;
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+}
+
+.section-subtitle {
+  @apply text-xl text-dark-600 dark:text-dark-200 mb-12 text-center max-w-3xl mx-auto;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500;
+}
+
+.card {
+  @apply bg-white dark:bg-dark-700 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 inline-flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white dark:bg-dark-700 hover:bg-gray-100 dark:hover:bg-dark-600 text-primary-600 dark:text-primary-400 font-medium rounded-lg border border-primary-600 dark:border-primary-400 transition-colors duration-300 inline-flex items-center justify-center;
+}
+
+.navbar-link {
+  @apply text-dark-600 dark:text-dark-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors;
+}
+
+.navbar-link.active {
+  @apply text-primary-600 dark:text-primary-400 font-medium;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 bg-gray-100 dark:bg-dark-600 rounded-lg border border-transparent focus:border-primary-500 focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-900 outline-none transition-all;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Stars background */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
