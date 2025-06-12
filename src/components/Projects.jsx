@@ -37,7 +37,7 @@ const Projects = () => {
       image: "/images/project/AdminPanel_HomePage.png",
       technologies: ["React.js", "ChartJs", "Tailwind Css", "API Integration"],
       category: "frontend",
-      liveLink: "#",
+      liveLink: "https://adminpanelecommerce.vercel.app",
       githubLink: "#",
     },
     {
