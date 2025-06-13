@@ -63,7 +63,7 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-dark-800 sticky z-20 -top-[65vh] lg:-top-36 overflow-hidden">
+    <section id="skills" className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-dark-800 relative z-40">
       
 
       <div className="max-w-7xl mx-auto ">

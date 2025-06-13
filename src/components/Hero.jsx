@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="pt-20 pb-12 md:pt-32 md:pb-20 bg-gray-100 dark:bg-dark-800 overflow-clip sticky -top-32 z-0"
+      className="pt-20 pb-12 md:pt-32 md:pb-20 bg-gray-100 dark:bg-dark-800 overflow-hidden relative z-40"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

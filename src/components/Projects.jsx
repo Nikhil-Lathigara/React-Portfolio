@@ -145,7 +145,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={ref}
-      className="py-4 md:py-12 bg-gray-100 dark:bg-dark-900 sticky lg:-top-[200vh] z-30 overflow-hidden"
+      className="py-4 md:py-12 bg-gray-100 dark:bg-dark-900 relative z-40 "
     >
       <div className="section-container ">
         <motion.div

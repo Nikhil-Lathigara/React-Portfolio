@@ -68,7 +68,7 @@ const Services = () => {
   }
 
   return (
-    <section id="services" ref={ref} className="py-4 md:py-12  bg-gray-100 dark:bg-dark-900 sticky -top-[200vh] z-40">
+    <section id="services" ref={ref} className="py-4 md:py-12  bg-gray-100 dark:bg-dark-900 relative z-40">
      
       <div className="section-container">
         <motion.div

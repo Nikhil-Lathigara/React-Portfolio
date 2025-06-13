@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-dark-900 sticky -top-[250vh] lg:-top-[530px] z-10 overflow-hidden">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-dark-900 relative z-40">
       
 
       <div className="max-w-7xl mx-auto ">

@@ -24,7 +24,7 @@ function App() {
   }, [theme])
 
   return (
-    <div className="relative min-h-screen ">
+    <div className="relative min-h-screen overflow-x-hidden">
       {theme === 'dark' && <StarBackground />}
       <Navbar />
       <main>
