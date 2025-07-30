@@ -81,7 +81,7 @@ const Hero = () => {
               >
                 View Projects <FiArrowRight className="ml-2" />
               </Link>
-              <a href="https://drive.google.com/file/d/1xTnK6CR-8zjq-lYzMEpzJ6o9EE-NuNCD/view?usp=drivesdk" className="btn-secondary" download>
+              <a href="https://drive.google.com/file/d/1zKEax6Mi2TlOJhehNpruXKvQGGbOl4dq/view?usp=drive_link" className="btn-secondary" download>
                 Download Resume <FiDownload className="ml-2" />
               </a>
             </motion.div>
