@@ -14,6 +14,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Mentors Persona Chatbot",
+      description:
+        "Developed a persona-based chatbot that mimics unique personalities, enabling natural, engaging, and role-specific AI conversations tailored to users.",
+      image: "/images/project/mentors-persona.jpg",
+      technologies: [
+        "GenAI",
+        "OpenAI",
+        "React.js",
+        "Tailwind Css",
+        "Node.js",
+        "API Integration",
+      ],
+      category: "fullstack",
+      liveLink: "https://mentors-persona.vercel.app/",
+      githubLink: "https://github.com/Nikhil-Lathigara/Persona",
+    },
+    {
+      id: 2,
       title: "E-Commerce Platform",
       description:
         "Built an interactive, modern and responsive frontend for a full-featured e-commerce solution. Worked as a team with product manager to design and develop a fully functional e-commerce website.",
@@ -27,17 +45,6 @@ const Projects = () => {
       ],
       category: "frontend",
       liveLink: "https://userweb-zeta.vercel.app/",
-      githubLink: "#",
-    },
-    {
-      id: 2,
-      title: "E-commerce Admin Panel",
-      description:
-        "Designed a dynamic and visually engaging admin dashboard with charts and analytics",
-      image: "/images/project/AdminPanel_HomePage.png",
-      technologies: ["React.js", "ChartJs", "Tailwind Css", "API Integration"],
-      category: "frontend",
-      liveLink: "https://adminpanelecommerce.vercel.app",
       githubLink: "#",
     },
     {
