@@ -12,8 +12,25 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   const projects = [
-    {
+        {
       id: 1,
+      title: "MacStrom Battle",
+      description:
+        "Built a scalable esports tournament platform with secure payment integration (Razorpay/IMB Gateway), low-latency live streaming using Hls.js, optimized Core Web Vitals, enhanced SEO with structured data, and mobile-first responsive UI with smooth Framer Motion animations.",
+      image: "/images/project/macstrom_logo.webp",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Hls.js",
+        "Framer Motion",
+        "Razorpay",
+        "SEO Optimization",
+      ],
+      category: "frontend",
+      liveLink: "https://macstrombattle.com",
+    },
+    {
+      id: 2,
       title: "Mentors Persona Chatbot",
       description:
         "Developed a persona-based chatbot that mimics unique personalities, enabling natural, engaging, and role-specific AI conversations tailored to users.",
@@ -31,23 +48,6 @@ const Projects = () => {
       githubLink: "https://github.com/Nikhil-Lathigara/Persona",
     },
     {
-      id: 2,
-      title: "E-Commerce Platform",
-      description:
-        "Built an interactive, modern and responsive frontend for a full-featured e-commerce solution. Worked as a team with product manager to design and develop a fully functional e-commerce website.",
-      image: "/images/project/E-commerce.png",
-      technologies: [
-        "React.js",
-        "Tailwind Css",
-        "Node.js",
-        "MongoDB",
-        "API Integration",
-      ],
-      category: "frontend",
-      liveLink: "https://userweb-zeta.vercel.app/",
-      githubLink: "#",
-    },
-    {
       id: 3,
       title: "MaccoTech Digital Marketing Website",
       description:
@@ -61,7 +61,6 @@ const Projects = () => {
       ],
       category: "frontend",
       liveLink: "https://maccotech.in",
-      githubLink: "#",
     },
     {
       id: 4,
@@ -247,22 +246,22 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-dark-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
                   <div className="space-x-2">
-                    <a
+                    {project.githubLink && <a
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-10 h-10 bg-dark-800/80 hover:bg-primary-600 rounded-full text-white transition-colors duration-300"
                     >
                       <FiGithub className="w-5 h-5" />
-                    </a>
-                    <a
+                    </a>}
+                    {project.liveLink && <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-10 h-10 bg-dark-800/80 hover:bg-accent-600 rounded-full text-white transition-colors duration-300"
                     >
                       <FiExternalLink className="w-5 h-5" />
-                    </a>
+                    </a>}
                   </div>
                 </div>
               </div>
