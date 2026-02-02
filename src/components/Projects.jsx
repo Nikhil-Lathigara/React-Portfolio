@@ -14,6 +14,20 @@ const Projects = () => {
   const projects = [
         {
       id: 1,
+      title: "TTL Supplements",
+      description:
+        "TTL Supplements is a modern, fully responsive LANDING PAGE built for a premium horse supplements brand. The website focuses on clean UI, smooth animations, and user-friendly experience across all devices. Built using React.js and Tailwind CSS, the project emphasizes component-based architecture, optimized layouts, and seamless responsiveness. Interactive elements and subtle motion effects enhance user engagement.",
+      image: "/images/project/ttl.png",
+      technologies: [
+        "React.js",
+        "Tailwind CSS",
+      ],
+      category: "frontend",
+      githubLink: "https://github.com/Nikhil-Lathigara/TTL",
+      liveLink: "https://ttl-gold.vercel.app",
+    },
+        {
+      id: 2,
       title: "MacStrom Battle",
       description:
         "Built a scalable esports tournament platform with secure payment integration (Razorpay/IMB Gateway), low-latency live streaming using Hls.js, optimized Core Web Vitals, enhanced SEO with structured data, and mobile-first responsive UI with smooth Framer Motion animations.",
@@ -27,10 +41,10 @@ const Projects = () => {
         "SEO Optimization",
       ],
       category: "frontend",
-      liveLink: "https://macstrombattle.com",
+      liveLink: "https://macstormbattle.vercel.app",
     },
     {
-      id: 2,
+      id: 3,
       title: "Mentors Persona Chatbot",
       description:
         "Developed a persona-based chatbot that mimics unique personalities, enabling natural, engaging, and role-specific AI conversations tailored to users.",
@@ -46,21 +60,6 @@ const Projects = () => {
       category: "fullstack",
       liveLink: "https://mentors-persona.vercel.app/",
       githubLink: "https://github.com/Nikhil-Lathigara/Persona",
-    },
-    {
-      id: 3,
-      title: "MaccoTech Digital Marketing Website",
-      description:
-        "Our company website in which I worked as a frontend developer to develope a fast, animated, and SEO-friendly marketing website.",
-      image: "/images/project/MaccoTech.png",
-      technologies: [
-        "NextJs",
-        "Tailwind CSS",
-        "Framer Motion",
-        "API Integration",
-      ],
-      category: "frontend",
-      liveLink: "https://maccotech.in",
     },
     {
       id: 4,

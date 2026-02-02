@@ -4,7 +4,7 @@ import { Code, Coffee, Zap } from "lucide-react";
 const About = () => {
   const timeline = [
     {
-      year: "March 2025 - Present",
+      year: "March 2025 - Nov 2025",
       title: "Frontend Developer",
       description: "Building modern, responsive user interfaces with React.js and Next.js, collaborating with cross-functional teams, and integrating RESTful APIs for seamless functionality.",
       icon: "🚀"
