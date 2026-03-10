@@ -12,6 +12,23 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   const projects = [
+    {
+      id: 9,
+      title: "Premium Jewellery E-Commerce Platform",
+      description:
+        "Built a e-commerce platform featuring fluid micro-animations via Framer Motion and adaptive dark/light theming. Engineered a multi-layer caching architecture, Redis on the server paired with TanStack Query on the client, enabling optimistic UI updates and significantly faster load times. Shipped a real-time admin dashboard with live inventory tracking, lead analytics, and Cloudinary-powered media delivery via global CDN.",
+      image: "/images/project/jewellery.png",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Redis",
+        "Tailwind CSS",
+      ],
+      category: "fullstack",
+      liveLink: "https://sms-jewellery-house.vercel.app/",
+    },
         {
       id: 1,
       title: "TTL Supplements",
@@ -230,9 +247,9 @@ const Projects = () => {
           animate={inView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={index}
               variants={item}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
               className="bg-white dark:bg-dark-700 rounded-xl shadow-md overflow-hidden group"
