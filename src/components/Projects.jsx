@@ -16,7 +16,7 @@ const Projects = () => {
       id: 9,
       title: "Premium Jewellery E-Commerce Platform",
       description:
-        "Built a e-commerce platform featuring fluid micro-animations via Framer Motion and adaptive dark/light theming. Engineered a multi-layer caching architecture, Redis on the server paired with TanStack Query on the client, enabling optimistic UI updates and significantly faster load times. Shipped a real-time admin dashboard with live inventory tracking, lead analytics, and Cloudinary-powered media delivery via global CDN.",
+        "Built a e-commerce platform featuring fluid micro-animations via Framer Motion and adaptive dark/light theming. Engineered a multi-layer caching architecture, Redis on the server paired with TanStack Query on the client, enabling optimistic UI updates and significantly faster load times. Shipped a real-time admin dashboard with live inventory tracking, lead analytics and Cloudinary-powered media delivery via global CDN.",
       image: "/images/project/jewellery.png",
       technologies: [
         "React.js",
