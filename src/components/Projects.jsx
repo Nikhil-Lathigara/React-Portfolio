@@ -13,6 +13,21 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 10,
+      title: "Cloud Family Salon ✂️✨",
+      description:
+        "A premium luxury salon website built with Next.js 15 and Tailwind CSS 4. Features a sophisticated design with gold accents, elegant typography, and smooth AOS animations. Optimized for performance and fully responsive, it includes interactive service highlights and a direct WhatsApp contact integration.",
+      image: "/images/project/salon.png",
+      technologies: [
+        "Next.js 15+",
+        "Tailwind CSS 4.0",
+        "Lucide React",
+        "AOS Animations",
+      ],
+      category: "frontend",
+      liveLink: "https://cloud-family-salon.vercel.app/",
+    },
+    {
       id: 9,
       title: "Premium Jewellery E-Commerce Platform",
       description:
@@ -29,7 +44,7 @@ const Projects = () => {
       category: "fullstack",
       liveLink: "https://sms-jewellery-house.vercel.app/",
     },
-        {
+    {
       id: 1,
       title: "TTL Supplements",
       description:
@@ -43,7 +58,7 @@ const Projects = () => {
       githubLink: "https://github.com/Nikhil-Lathigara/TTL",
       liveLink: "https://ttl-gold.vercel.app",
     },
-        {
+    {
       id: 2,
       title: "MacStrom Battle",
       description:
@@ -96,7 +111,7 @@ const Projects = () => {
         "Designed RESTful API to manage books and developed a responsive React app for a book collection using React, Node.js, and MongoDB.",
       image:
         "../images/project/Kitaab.png",
-      technologies: ["React","Node.js", "MongoDB", "API Integration"],
+      technologies: ["React", "Node.js", "MongoDB", "API Integration"],
       category: "fullstack",
       liveLink: "https://book-collection-seven-mu.vercel.app/",
       githubLink: "https://github.com/Nikhil-Lathigara/BookCollection",
@@ -189,56 +204,52 @@ const Projects = () => {
         </motion.div>
 
         <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12"
-        >
-          <div className="inline-flex p-1 bg-gray-100 dark:bg-dark-700 rounded-lg">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                filter === "all"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="inline-flex p-1 bg-gray-100 dark:bg-dark-700 rounded-lg">
+              <button
+                onClick={() => setFilter("all")}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "all"
                   ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
                   : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-              }`}
-            >
-              All Projects
-            </button>
-            <button
-              onClick={() => setFilter("fullstack")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                filter === "fullstack"
+                  }`}
+              >
+                All Projects
+              </button>
+              <button
+                onClick={() => setFilter("fullstack")}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "fullstack"
                   ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
                   : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-              }`}
-            >
-              Full Stack
-            </button>
-            <button
-              onClick={() => setFilter("frontend")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                filter === "frontend"
+                  }`}
+              >
+                Full Stack
+              </button>
+              <button
+                onClick={() => setFilter("frontend")}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "frontend"
                   ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
                   : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-              }`}
-            >
-              Frontend
-            </button>
-            <button
-              onClick={() => setFilter("backend")}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                filter === "backend"
+                  }`}
+              >
+                Frontend
+              </button>
+              <button
+                onClick={() => setFilter("backend")}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "backend"
                   ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
                   : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-              }`}
-            >
-              Backend
-            </button>
-            
-          </div>
-        </motion.div>
+                  }`}
+              >
+                Backend
+              </button>
+
+            </div>
+          </motion.div>
         </AnimatePresence>
 
         <motion.div
