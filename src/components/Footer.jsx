@@ -1,92 +1,77 @@
-import { Link } from 'react-scroll'
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiHeart } from 'react-icons/fi'
+import { Link } from "react-scroll";
+import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
-  
+  const currentYear = new Date().getFullYear();
+
   const footerLinks = [
-    { title: "Links", items: [
-      { name: "Home", to: "hero" },
-      { name: "About", to: "about" },
-      { name: "Skills", to: "skills" },
-      { name: "Projects", to: "projects" },
-      { name: "Contact", to: "contact" }
-    ]},
-    { title: "Services", items: [
-      { name: "Web Development", to: "services" },
-      { name: "Backend Development", to: "services" },
-      { name: "Database Design", to: "services" },
-      { name: "Responsive Design", to: "services" },
-      { name: "Performance Optimization", to: "services" }
-    ]},
-    { title: "Contact", items: [
-      { name: "Email: nikhilsoni1209@gmail.com", url: "mailto:nikhilsoni1209@gmail.com" },
-      { name: "Jalgaon, Maharashtra", url: "#" },
-      { name: "Phone: +91 72767-29541", url: "+917276729541" }
-    ]}
-  ]
+    {
+      title: "Navigation",
+      items: [
+        { name: "Home", to: "hero" },
+        { name: "About", to: "about" },
+        { name: "Skills", to: "skills" },
+        { name: "Projects", to: "projects" },
+        { name: "Services", to: "services" },
+      ],
+    },
+    {
+      title: "Services",
+      items: [
+        { name: "Web Development", to: "services" },
+        { name: "AI Integration", to: "services" },
+        { name: "Backend Dev", to: "services" },
+      ],
+    },
+    {
+      title: "Contact",
+      items: [
+        { name: "nikhillathigara.work@gmail.com", url: "mailto:nikhillathigara.work@gmail.com" },
+        { name: "Airoli, Navi Mumbai, Maharashtra", url: "#" },
+        { name: "+91 72767 29541", url: "tel:+917276729541" },
+      ],
+    },
+  ];
+
+  const socialLinks = [
+    { name: "GitHub", url: "https://github.com/Nikhil-Lathigara", icon: <FiGithub size={14} /> },
+    { name: "LinkedIn", url: "https://linkedin.com/in/nikhil-lathigara", icon: <FiLinkedin size={14} /> },
+    { name: "Email", url: "mailto:nikhillathigara.work@gmail.com", icon: <FiMail size={14} /> },
+  ];
 
   return (
-    <footer className="bg-neutral-200 dark:bg-dark-900 pt-16 pb-8 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <Link 
-              to="hero" 
-              spy={true} 
-              smooth={true} 
-              duration={500} 
-              className="cursor-pointer"
-            >
-              <div className="text-2xl font-bold mb-4 flex items-center">
-                <span className="gradient-text">Dev</span>
-                <span className="dark:text-white">Folio</span>
-              </div>
-            </Link>
-            <p className="text-dark-500 dark:text-dark-300 mb-6">
-              Creating beautiful, functional, and user-friendly digital experiences through clean code and modern design.
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="GitHub"
-              >
-                <FiGithub className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FiLinkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="Twitter"
-              >
-                <FiTwitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="mailto:contact@example.com" 
-                className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label="Email"
-              >
-                <FiMail className="w-5 h-5" />
-              </a>
-            </div>
+    <footer className="bg-black text-white relative overflow-hidden">
+      {/* Background Text */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
+        <div className="absolute top-1/2 left-0 w-[200%] -translate-y-1/2">
+          <div className="whitespace-nowrap animate-marquee">
+            <span className="text-[8vw] md:text-[10vw] font-black uppercase leading-none">
+              NIKHIL LATHIGARA — FULL STACK — AI ENGINEER —
+            </span>
           </div>
-          
+        </div>
+      </div>
+
+      {/* Decorative Lines */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-[#FFED00]"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-10 md:py-12">
+        {/* Giant Text */}
+        <div className="mb-10 text-center">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-none">
+            <span className="text-transparent stroke-white stroke-1">Let's</span>
+            <br />
+            <span className="text-[#FFED00]">Connect</span>
+          </h2>
+        </div>
+
+        {/* Links Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {footerLinks.map((column, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-semibold mb-4 dark:text-white">{column.title}</h3>
+              <h3 className="text-sm font-black uppercase tracking-wider mb-4 text-[#FFED00] border-b border-white/20 pb-2">
+                {column.title}
+              </h3>
               <ul className="space-y-2">
                 {column.items.map((item, itemIdx) => (
                   <li key={itemIdx}>
@@ -95,16 +80,16 @@ const Footer = () => {
                         to={item.to}
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-60}
                         duration={500}
-                        className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+                        className="text-white/50 hover:text-[#FFED00] font-bold text-xs uppercase tracking-wide transition-colors cursor-pointer"
                       >
                         {item.name}
                       </Link>
                     ) : (
-                      <a 
-                        href={item.url} 
-                        className="text-dark-500 dark:text-dark-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                      <a
+                        href={item.url}
+                        className="text-white/50 hover:text-[#FFED00] font-bold text-xs uppercase tracking-wide transition-colors"
                       >
                         {item.name}
                       </a>
@@ -115,15 +100,50 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        
-        <div className="pt-8 border-t border-gray-200 dark:border-dark-700 text-center">
-          <p className="text-dark-500 dark:text-dark-400 text-sm">
-            © {currentYear} DevFolio. All rights reserved. Made with <FiHeart className="w-4 h-4 inline text-accent-500" /> by Nikhil Lathigara
-          </p>
+
+        {/* Social Links */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+          {socialLinks.map((social, idx) => (
+            <a
+              key={idx}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-white text-black px-4 py-2 font-black uppercase text-xs hover:bg-[#FFED00] transition-colors"
+            >
+              {social.icon}
+              <span className="hidden sm:inline">{social.name}</span>
+            </a>
+          ))}
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 border-t border-white/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+            <p className="text-white/40 font-bold text-xs uppercase tracking-wider">
+              © {currentYear} DevFolio. All rights reserved.
+            </p>
+            <p className="text-white/40 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+              Made with <span className="text-[#FFED00]">♥</span> by <span className="text-white">Nikhil</span>
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
-  )
-}
 
-export default Footer
+      {/* Back to Top */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Link
+          to="hero"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="bg-[#FFED00] text-black border-2 border-black px-4 py-2 font-black uppercase text-xs shadow-[3px_3px_0px_#fff] hover:shadow-[4px_4px_0px_#fff] hover:-translate-y-1 transition-all"
+        >
+          ↑ Top
+        </Link>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

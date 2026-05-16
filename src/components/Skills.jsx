@@ -1,179 +1,522 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { RiNextjsFill, RiReactjsFill, RiNodejsFill, RiTailwindCssFill, RiHtml5Fill, RiCss3Fill, RiJavascriptFill } from "react-icons/ri";
-import { SiExpress, SiMongodb } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 
-export const Skills = () => {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+import {
+  RiNextjsFill,
+  RiReactjsFill,
+  RiNodejsFill,
+  RiTailwindCssFill,
+  RiJavascriptFill,
+} from "react-icons/ri";
 
-  const skills = [
-    { name: "HTML", icon: <RiHtml5Fill size={72}/>, level: 95, color: "from-orange-400 to-red-500", category: "Frontend" },
-    { name: "CSS", icon: <RiCss3Fill size={72}/>, level: 90, color: "from-blue-400 to-blue-600", category: "Frontend" },
-    { name: "JavaScript", icon: <RiJavascriptFill size={72}/>, level: 88, color: "from-yellow-400 to-orange-500", category: "Frontend" },
-    { name: "React", icon: <RiReactjsFill size={72}/>, level: 92, color: "from-cyan-400 to-blue-500", category: "Frontend" },
-    { name: "Tailwind CSS", icon: <RiTailwindCssFill size={72}/>, level: 85, color: "from-teal-400 to-cyan-500", category: "Frontend" },
-    { name: "Next.js", icon: <RiNextjsFill size={72}/>, level: 80, color: "from-gray-400 to-gray-600", category: "Frontend" },
-    { name: "Node.js", icon: <RiNodejsFill size={72}/>, level: 85, color: "from-green-400 to-green-600", category: "Backend" },
-    { name: "Express.js", icon: <SiExpress size={72}/>, level: 82, color: "from-purple-400 to-purple-600", category: "Backend" },
-    { name: "MongoDB", icon: <SiMongodb  size={72}/>
-      , level: 78, color: "from-green-500 to-green-700", category: "Database" },
+import {
+  SiPython,
+  SiExpress,
+  SiMongodb,
+  SiTypescript,
+  SiDocker,
+  SiAmazon,
+  SiRedis,
+  SiPostgresql,
+  SiOpenai,
+  SiLangchain,
+  SiGithub,
+  SiFigma,
+  SiPostman,
+  SiClaude,
+} from "react-icons/si";
+
+const Skills = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const skillCategories = [
+    {
+      title: "FRONTEND",
+      color: "#FFED00",
+      bg: "bg-[#FFED00]",
+      skills: [
+        {
+          name: "React.js",
+          icon: <RiReactjsFill />,
+        },
+        {
+          name: "Next.js",
+          icon: <RiNextjsFill />,
+        },
+        {
+          name: "JavaScript",
+          icon: <RiJavascriptFill />,
+        },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript />,
+        },
+        {
+          name: "Tailwind",
+          icon: <RiTailwindCssFill />,
+        },
+      ],
+    },
+
+    {
+      title: "BACKEND",
+      color: "#00C2FF",
+      bg: "bg-[#00C2FF]",
+      skills: [
+        {
+          name: "Python",
+          icon: <SiPython />,
+        },
+        {
+          name: "Node.js",
+          icon: <RiNodejsFill />,
+        },
+        {
+          name: "Express",
+          icon: <SiExpress />,
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb />,
+        },
+        {
+          name: "PostgreSQL",
+          icon: <SiPostgresql />,
+        }
+      ],
+    },
+
+    {
+      title: "AI",
+      color: "#FF90E8",
+      bg: "bg-[#FF90E8]",
+      skills: [
+        {
+          name: "OpenAI",
+          icon: <SiOpenai />,
+        },
+        {
+          name: "LangChain",
+          icon: <SiLangchain />,
+        },
+        {
+          name : "Claude",
+          icon: <SiClaude />,
+        }
+      ],
+    },
+
+    {
+      title: "TOOLS",
+      color: "#00FF85",
+      bg: "bg-[#00FF85]",
+      skills: [
+                {
+          name: "Docker",
+          icon: <SiDocker />,
+        },
+        {
+          name: "GitHub",
+          icon: <SiGithub />,
+        },
+        {
+          name: "Figma",
+          icon: <SiFigma />,
+        },
+        {
+          name: "Postman",
+          icon: <SiPostman />,
+        },
+      ],
+    },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50,
-      scale: 0.8,
-      rotateX: -15
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    },
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [-2, 2, -2],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section id="skills" className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-dark-800 relative z-40">
-      
+    <section
+      id="skills"
+      ref={ref}
+      className="
+        relative
+        py-20
+        md:py-28
+        bg-[#111111]
+        overflow-hidden
+      "
+    >
+      {/* BACKGROUND GRID */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <div className="grid grid-cols-6 h-full">
+          {Array.from({ length: 36 }).map((_, i) => (
+            <div
+              key={i}
+              className="border border-white"
+            />
+          ))}
+        </div>
+      </div>
 
-      <div className="max-w-7xl mx-auto ">
-        
+      {/* HUGE BACKGROUND TEXT */}
+      <div
+        className="
+          absolute
+          top-10
+          left-0
+          text-[18vw]
+          font-black
+          uppercase
+          leading-none
+          text-white/[0.03]
+          whitespace-nowrap
+          pointer-events-none
+        "
+      >
+        SKILLS STACK
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          animate={
+            inView
+              ? {
+                opacity: 1,
+                y: 0,
+              }
+              : {}
+          }
+          transition={{
+            duration: 0.5,
+          }}
+          className="mb-16 md:mb-24"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-primary-500 dark:text-white mb-6">
-            My <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">Arsenal</span>
+          {/* LABEL */}
+          <div
+            className="
+              inline-block
+              bg-[#00FF85]
+              border-4
+              border-black
+              px-4
+              py-2
+              shadow-[6px_6px_0px_#000]
+              rotate-[-2deg]
+              mb-6
+            "
+          >
+            <span
+              className="
+                text-black
+                font-black
+                uppercase
+                tracking-wide
+              "
+            >
+              MY TOOLKIT
+            </span>
+          </div>
+
+          {/* TITLE */}
+          <h2
+            className="
+              text-5xl
+              md:text-7xl
+              lg:text-8xl
+              font-black
+              uppercase
+              leading-[0.9]
+              tracking-[-0.06em]
+              text-white
+              mb-6
+            "
+          >
+            SKILLS
+            <br />
+
+            <span
+              className="
+                inline-block
+                bg-[#FFED00]
+                text-black
+                px-3
+                rotate-[-2deg]
+              "
+            >
+              & STACK
+            </span>
           </h2>
-          <p className="text-black/90 dark:text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">
-            The tools and technologies I wield to craft digital experiences
+
+          {/* DESCRIPTION */}
+          <p
+            className="
+              max-w-3xl
+              text-lg
+              md:text-2xl
+              text-white/70
+              font-medium
+              leading-relaxed
+            "
+          >
+            I build modern digital products using
+            full-stack technologies, AI systems,
+            scalable backend architecture, and
+            high-performance frontend engineering.
           </p>
         </motion.div>
 
-        {/* Creative floating grid layout */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="relative"
-        >
-          {/* Central orbit visualization */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-80 h-80 border border-purple-500/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-              <div className="absolute top-10 left-10 w-60 h-60 border border-blue-500/20 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-            </div>
-          </div>
-
-          {/* Skills grid with creative positioning */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-8">
-            {skills.map((skill, index) => (
+        {/* CATEGORIES */}
+        <div className="space-y-10">
+          {skillCategories.map(
+            (category, categoryIndex) => (
               <motion.div
-                key={skill.name}
-                variants={cardVariants}
-                whileHover={{ 
-                  scale: 1.1, 
-                  y: -15,
-                  rotateY: 10,
-                  zIndex: 10
+                key={category.title}
+                initial={{
+                  opacity: 0,
+                  y: 50,
                 }}
-                onHoverStart={() => setHoveredSkill(skill.name)}
-                onHoverEnd={() => setHoveredSkill(null)}
-                className={`relative group cursor-pointer ${index % 2 === 0 ? 'lg:mt-8' : ''} ${index % 3 === 0 ? 'md:mt-4' : ''}`}
+                animate={
+                  inView
+                    ? {
+                      opacity: 1,
+                      y: 0,
+                    }
+                    : {}
+                }
+                transition={{
+                  delay: categoryIndex * 0.1,
+                }}
+                className="
+                  border-4
+                  border-black
+                  bg-white
+                  shadow-[10px_10px_0px_#000]
+                  overflow-hidden
+                "
               >
-                <motion.div
-                  variants={floatingVariants}
-                  animate="animate"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  className="relative"
+                {/* TOP BAR */}
+                <div
+                  className={`
+                    ${category.bg}
+                    border-b-4
+                    border-black
+                    px-5
+                    md:px-8
+                    py-5
+                  `}
                 >
-                  {/* Card with glassmorphism effect */}
-                  <div className={`relative bg-gradient-to-br ${skill.color} p-0.5 rounded-2xl overflow-hidden`}>
-                    <div className="dark:bg-slate-900/90 bg-slate-300/90 backdrop-blur-xl rounded-2xl p-6 h-full transition-all duration-500 dark:group-hover:bg-slate-800/90">
-                      {/* Skill icon with dynamic sizing */}
-                      <div className="text-center mb-4">
-                        
-                          <div className="lg:ml-12 ml-6">
-                          {skill.icon}
-                          </div>
-                        <h3 className="text-primary-500 dark:text-white font-bold text-lg group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-500 group-hover:bg-clip-text transition-all duration-300">
-                          {skill.name}
-                        </h3>
-                        <p className="text-xs text-black/90 dark:text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {skill.category}
-                        </p>
-                      </div>
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      md:flex-row
+                      md:items-center
+                      md:justify-between
+                      gap-3
+                    "
+                  >
+                    <h3
+                      className="
+                        text-3xl
+                        md:text-5xl
+                        font-black
+                        uppercase
+                        tracking-[-0.05em]
+                        text-black
+                      "
+                    >
+                      {category.title}
+                    </h3>
 
-                      {/* Hover effect particles */}
-                      {hoveredSkill === skill.name && (
-                        <div className="absolute inset-0 pointer-events-none">
-                          {[...Array(6)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              className="absolute w-1 h-1 bg-white rounded-full"
-                              initial={{
-                                x: "50%",
-                                y: "50%",
-                                opacity: 0,
-                              }}
-                              animate={{
-                                x: `${Math.random() * 100}%`,
-                                y: `${Math.random() * 100}%`,
-                                opacity: [0, 1, 0],
-                              }}
-                              transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                delay: i * 0.2,
-                              }}
-                            />
-                          ))}
-                        </div>
-                      )}
+                    <div
+                      className="
+                        text-xs
+                        md:text-sm
+                        font-black
+                        uppercase
+                        tracking-[0.25em]
+                        text-black/70
+                      "
+                    >
+                      {
+                        category.skills.length
+                      }{" "}
+                      TECHNOLOGIES
                     </div>
                   </div>
+                </div>
 
-                  {/* Glow effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-50`} />
-                </motion.div>
+                {/* SKILLS GRID */}
+                <div
+                  className="
+                    grid
+                    grid-cols-2
+                    md:grid-cols-3
+                    lg:grid-cols-5
+                  "
+                >
+                  {category.skills.map(
+                    (skill, skillIndex) => (
+                      <motion.div
+                        key={skill.name}
+                        initial={{
+                          opacity: 0,
+                          scale: 0.8,
+                        }}
+                        animate={
+                          inView
+                            ? {
+                              opacity: 1,
+                              scale: 1,
+                            }
+                            : {}
+                        }
+                        transition={{
+                          delay:
+                            categoryIndex * 0.1 +
+                            skillIndex * 0.05,
+                        }}
+                        whileHover={{
+                          y: -8,
+                          rotate: -2,
+                        }}
+                        className="
+                          group
+                          relative
+                          border-r-4
+                          border-b-4
+                          border-black
+                          min-h-[180px]
+                          md:min-h-[220px]
+                          p-5
+                          md:p-6
+                          flex
+                          flex-col
+                          justify-between
+                          bg-white
+                          hover:bg-black
+                          transition-all
+                          duration-200
+                        "
+                      >
+                        {/* NUMBER */}
+                        <span
+                          className="
+                            absolute
+                            top-3
+                            right-3
+                            text-[10px]
+                            md:text-xs
+                            font-black
+                            text-black/30
+                            group-hover:text-white/30
+                            uppercase
+                          "
+                        >
+                          0
+                          {skillIndex + 1}
+                        </span>
+
+                        {/* ICON */}
+                        <div
+                          className="
+                            text-5xl
+                            md:text-6xl
+                            text-black
+                            group-hover:text-white
+                            transition-colors
+                            duration-200
+                          "
+                        >
+                          {skill.icon}
+                        </div>
+
+                        {/* TEXT */}
+                        <div>
+                          <h4
+                            className="
+                              text-xl
+                              md:text-2xl
+                              font-black
+                              uppercase
+                              leading-none
+                              tracking-[-0.04em]
+                              text-black
+                              group-hover:text-white
+                              transition-colors
+                              duration-200
+                            "
+                          >
+                            {skill.name}
+                          </h4>
+
+                          {/* BAR */}
+                          <div
+                            className="
+                              mt-4
+                              w-full
+                              h-[8px]
+                              bg-black/10
+                              overflow-hidden
+                            "
+                          >
+                            <motion.div
+                              initial={{
+                                width: 0,
+                              }}
+                              animate={
+                                inView
+                                  ? {
+                                    width:
+                                      "100%",
+                                  }
+                                  : {}
+                              }
+                              transition={{
+                                duration: 0.8,
+                                delay:
+                                  skillIndex *
+                                  0.08,
+                              }}
+                              className="h-full"
+                              style={{
+                                background:
+                                  category.color,
+                              }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* DECORATIVE BLOCK */}
+                        <div
+                          className="
+                            absolute
+                            bottom-0
+                            right-0
+                            w-5
+                            h-5
+                          "
+                          style={{
+                            background:
+                              category.color,
+                          }}
+                        />
+                      </motion.div>
+                    )
+                  )}
+                </div>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
+            )
+          )}
+        </div>
       </div>
     </section>
   );
 };
+
+export default Skills;

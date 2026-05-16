@@ -1,167 +1,619 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { FiMonitor, FiServer, FiDatabase, FiSmartphone, FiRefreshCw, FiSearch } from 'react-icons/fi'
-import { useState } from 'react'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+import {
+  FiMonitor,
+  FiServer,
+  FiDatabase,
+  FiSearch,
+  FiCode,
+  FiCpu,
+  FiArrowUpRight,
+} from "react-icons/fi";
 
 const Services = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
-  })
-
-  const [flippedIndex, setFlippedIndex] = useState(null)
-
-  const handleFlip = (index) => {
-    setFlippedIndex(flippedIndex === index ? null : index)
-  }
+    threshold: 0.1,
+  });
 
   const services = [
     {
-      icon: <FiMonitor className="w-8 h-8" />,
-      title: "Web Development",
-      description: "Creating responsive and dynamic websites using modern frontend technologies like React and Next.js.",
-      color: "primary"
+      icon: <FiMonitor />,
+      title: "FULL STACK APPLICATIONS",
+      description:
+        "Modern responsive applications with scalable frontend architecture and robust backend solutions.",
+      price: "STARTS AT $200",
+      color: "#FFED00",
+      bg: "bg-[#FFED00]",
+      features: [
+        "Frontend",
+        "Backend",
+        "APIs",
+        "Deployment",
+      ],
     },
-    {
-      icon: <FiServer className="w-8 h-8" />,
-      title: "Backend Development",
-      description: "Building robust server-side applications with Node.js, Express and RESTful APIs.",
-      color: "secondary"
-    },
-    {
-      icon: <FiDatabase className="w-8 h-8" />,
-      title: "Database Design",
-      description: "Designing efficient database structures and implementing data management solutions with MongoDB.",
-      color: "accent"
-    },
-    {
-      icon: <FiSmartphone className="w-8 h-8" />,
-      title: "Responsive Design",
-      description: "Creating websites that provide optimal viewing experience across a wide range of devices.",
-      color: "green"
-    },
-    {
-      icon: <FiRefreshCw className="w-8 h-8" />,
-      title: "Website Maintenance",
-      description: "Regular updates, monitoring, and maintenance to keep your website running smoothly.",
-      color: "yellow"
-    },
-    {
-      icon: <FiSearch className="w-8 h-8" />,
-      title: "Performance Optimization",
-      description: "Improving website speed, performance, and SEO to enhance user experience and search rankings.",
-      color: "rose"
-    }
-  ]
 
-
-  const getColorClasses = (color) => {
-    const colorMap = {
-      primary: "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 border-primary-200 dark:border-primary-800/50",
-      secondary: "bg-secondary-100 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 border-secondary-200 dark:border-secondary-800/50",
-      accent: "bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 border-accent-200 dark:border-accent-800/50",
-      green: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800/50",
-      yellow: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 border-yellow-200 dark:border-yellow-800/50",
-      rose: "bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-800/50"
-    }
-    return colorMap[color] || colorMap.primary
-  }
+    {
+      icon: <FiCpu />,
+      title: "AI SYSTEMS",
+      description:
+        "AI integrations, RAG pipelines, embeddings, and intelligent workflows.",
+      price: "STARTS AT $150 - $500",
+      color: "#FF90E8",
+      bg: "bg-[#FF90E8]",
+      features: [
+        "OpenAI",
+        "Gemini",
+        "LangChain",
+      ],
+    },
+    {
+      icon: <FiSearch />,
+      title: "SEO OPTIMIZATION",
+      description:
+        "Performance optimization and Core Web Vitals improvements.",
+      price: "STARTS AT $50 - $200",
+      color: "#8B5CF6",
+      bg: "bg-[#8B5CF6]",
+      features: [
+        "Lighthouse",
+        "SEO",
+        "Lazy Loading",
+      ],
+    },
+    {
+      icon: <FiCode />,
+      title: "CLEAN CODE",
+      description:
+        "Maintainable architecture with scalable engineering standards.",
+      price: "INCLUDED",
+      color: "#FF7A00",
+      bg: "bg-[#FF7A00]",
+      features: [
+        "Testing",
+        "DocUmentation",
+        "Code Reviews"
+      ],
+    },
+  ];
 
   return (
-    <section id="services" ref={ref} className="py-4 md:py-12  bg-gray-100 dark:bg-dark-900 relative z-40">
-     
-      <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-lg font-semibold text-primary-500 mb-2">What I Offer</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-black/80 dark:text-white">My Services</h3>
-          <p className="text-black/80 dark:text-dark-300 max-w-3xl mx-auto">
-            I provide a wide range of services to help businesses and individuals establish a strong online presence. Here are the main services I offer:
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+    <section
+      id="services"
+      ref={ref}
+      className="
+        relative
+        py-20
+        md:py-28
+        bg-[#111111]
+        overflow-hidden
+      "
+    >
+      {/* BACKGROUND GRID */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        <div className="grid grid-cols-6 h-full">
+          {Array.from({ length: 36 }).map((_, i) => (
             <div
-              key={index}
-              className="relative w-full h-80 cursor-pointer group"
-              style={{ perspective: '1000px' }}
-              onClick={() => handleFlip(index)}
-            >
-              <div
-                className={`relative w-full h-full transition-transform duration-700 transform-gpu ${
-                  flippedIndex === index ? 'rotate-y-180' : ''
-                }`}
-                style={{ 
-                  transformStyle: 'preserve-3d',
-                  transform: flippedIndex === index ? 'rotateY(180deg)' : 'rotateY(0deg)'
-                }}
-              >
-                {/* Front Face */}
-                <div 
-                  className="absolute w-full h-full p-6 bg-white  gradient-text rounded-xl shadow-lg border border-gray-200 flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300"
-                  style={{ backfaceVisibility: 'hidden' }}
-                >
-                  <div className={`w-16 h-16 mb-4 rounded-lg flex items-center justify-center border-2 ${getColorClasses(service.color)} transition-transform duration-300 group-hover:scale-110`}>
-                    {service.icon}
-                  </div>
-                  <h4 className="text-xl font-semibold mb-2 text-black/90 dark:text-white text-center">{service.title}</h4>
-                  <p className="text-sm text-black/90 dark:text-gray-100 text-center opacity-75">Click to know more...</p>
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                    <div className="w-2 h-2 bg-gray-300 rounded-full animate-bounce"></div>
-                  </div>
-                </div>
-
-                {/* Back Face */}
-                <div 
-                  className="absolute w-full h-full p-6 bg-white dark:bg-dark-700 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center"
-                  style={{ 
-                    backfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)'
-                  }}
-                >
-                  <div className="text-center">
-                    <div className={`w-12 h-12 mb-4 rounded-lg flex items-center justify-center mx-auto ${getColorClasses(service.color)}`}>
-                      {service.icon}
-                    </div>
-                    <p className="text-black/90 dark:text-white text-center leading-relaxed">{service.description}</p>
-                    <p className="text-xs text-black/90 dark:text-gray-100 mt-4">Click to flip back</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              key={i}
+              className="border border-white"
+            />
           ))}
         </div>
       </div>
-      <style>{`
-        .animate-fade-in {
-          animation: fadeIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
+
+      {/* HUGE BACKGROUND TEXT */}
+      <div
+        className="
+          absolute
+          top-10
+          right-0
+          text-[18vw]
+          leading-none
+          font-black
+          uppercase
+          text-white/[0.03]
+          whitespace-nowrap
+          pointer-events-none
+        "
+      >
+        SERVICES
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* HEADER */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          animate={
+            inView
+              ? {
+                opacity: 1,
+                y: 0,
+              }
+              : {}
           }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+          transition={{
+            duration: 0.5,
+          }}
+          className="
+            flex
+            flex-col
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+            gap-10
+            mb-16
+          "
+        >
+          {/* LEFT */}
+          <div className="max-w-3xl">
+            {/* LABEL */}
+            <div
+              className="
+                inline-block
+                bg-[#FFED00]
+                border-4
+                border-black
+                px-4
+                py-2
+                shadow-[6px_6px_0px_#000]
+                rotate-[-2deg]
+                mb-6
+              "
+            >
+              <span
+                className="
+                  text-black
+                  font-black
+                  uppercase
+                  tracking-wide
+                "
+              >
+                WHAT I OFFER
+              </span>
+            </div>
+
+            {/* TITLE */}
+            <h2
+              className="
+                text-5xl
+                md:text-7xl
+                lg:text-8xl
+                font-black
+                uppercase
+                leading-[0.9]
+                tracking-[-0.06em]
+                text-white
+                mb-6
+              "
+            >
+              MY
+              <br />
+
+              <span
+                className="
+                  inline-block
+                  bg-white
+                  text-black
+                  px-3
+                  rotate-[-2deg]
+                "
+              >
+                SERVICES
+              </span>
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                max-w-2xl
+                text-lg
+                md:text-2xl
+                text-white/70
+                font-medium
+                leading-relaxed
+              "
+            >
+              End-to-end development from frontend
+              engineering to AI-powered backend
+              systems and scalable digital products.
+            </p>
+          </div>
+
+          {/* SIDE LABEL */}
+          <div
+            className="
+              hidden
+              lg:flex
+              flex-col
+              items-end
+              gap-3
+            "
+          >
+            <span
+              className="
+                text-xs
+                uppercase
+                tracking-[0.3em]
+                text-white/40
+                font-black
+              "
+            >
+              CREATIVE ENGINEERING
+            </span>
+
+            <div
+              className="
+                w-24
+                h-3
+                bg-[#00FF85]
+                border-2
+                border-black
+              "
+            />
+          </div>
+        </motion.div>
+
+        {/* SERVICES LAYOUT */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            xl:grid-cols-3
+            gap-6
+          "
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={
+                inView
+                  ? {
+                    opacity: 1,
+                    y: 0,
+                  }
+                  : {}
+              }
+              transition={{
+                delay: index * 0.08,
+              }}
+              whileHover={{
+                y: -8,
+              }}
+              className={`
+                group
+                relative
+                overflow-hidden
+                border-4
+                border-black
+                bg-white
+                shadow-[10px_10px_0px_#000]
+                ${index % 2 === 0
+                  ? "rotate-[-1deg]"
+                  : "rotate-[1deg]"
+                }
+              `}
+            >
+              {/* TOP STRIP */}
+              <div
+                className="h-5 border-b-4 border-black"
+                style={{
+                  background: service.color,
+                }}
+              />
+
+              {/* NUMBER */}
+              <div
+                className="
+                  absolute
+                  top-6
+                  right-5
+                  text-5xl
+                  font-black
+                  text-black/[0.06]
+                  pointer-events-none
+                "
+              >
+                0{index + 1}
+              </div>
+
+              <div className="p-6 md:p-8">
+                {/* ICON */}
+                <div
+                  className={`
+                    ${service.bg}
+                    w-16
+                    h-16
+                    border-4
+                    border-black
+                    shadow-[5px_5px_0px_#000]
+                    flex
+                    items-center
+                    justify-center
+                    text-3xl
+                    text-black
+                    mb-6
+                    group-hover:rotate-[-8deg]
+                    transition-all
+                  `}
+                >
+                  {service.icon}
+                </div>
+
+                {/* TITLE */}
+                <h3
+                  className="
+                    text-3xl
+                    md:text-4xl
+                    font-black
+                    uppercase
+                    leading-[0.95]
+                    tracking-[-0.05em]
+                    text-black
+                    mb-4
+                  "
+                >
+                  {service.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    text-base
+                    md:text-lg
+                    text-black/70
+                    leading-relaxed
+                    font-medium
+                    mb-6
+                  "
+                >
+                  {service.description}
+                </p>
+
+                {/* FEATURES */}
+                <div className="space-y-3 mb-8">
+                  {service.features.map(
+                    (feature) => (
+                      <div
+                        key={feature}
+                        className="
+                          flex
+                          items-center
+                          gap-3
+                        "
+                      >
+                        <div
+                          className="
+                            w-3
+                            h-3
+                            border-2
+                            border-black
+                          "
+                          style={{
+                            background:
+                              service.color,
+                          }}
+                        />
+
+                        <span
+                          className="
+                            text-sm
+                            md:text-base
+                            font-black
+                            uppercase
+                            tracking-wide
+                            text-black
+                          "
+                        >
+                          {feature}
+                        </span>
+                      </div>
+                    )
+                  )}
+                </div>
+
+                {/* FOOTER */}
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+                    pt-5
+                    border-t-4
+                    border-black
+                  "
+                >
+                  {/* PRICE */}
+                  <div
+                    className={`
+                      ${service.bg}
+                      border-4
+                      border-black
+                      px-4
+                      py-2
+                      text-xs
+                      md:text-sm
+                      font-black
+                      uppercase
+                      shadow-[4px_4px_0px_#000]
+                    `}
+                  >
+                    {service.price}
+                  </div>
+
+                  {/* CTA */}
+                  <motion.a
+                  href="mailto:nikhillathigara.work@gmail.com"
+                    whileHover={{
+                      rotate: 8,
+                    }}
+                    className="
+                      w-12
+                      h-12
+                      border-4
+                      border-black
+                      bg-black
+                      text-white
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-[#FFED00]
+                      hover:text-black
+                      transition-all
+                    "
+                  >
+                    <FiArrowUpRight />
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* BIG CTA SECTION */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+          className="
+            mt-20
+            border-4
+            border-black
+            bg-[#FFED00]
+            shadow-[12px_12px_0px_#000]
+            overflow-hidden
+          "
+        >
+          <div
+            className="
+              grid
+              lg:grid-cols-2
+            "
+          >
+            {/* LEFT */}
+            <div
+              className="
+                p-8
+                md:p-12
+                border-b-4
+                lg:border-b-0
+                lg:border-r-4
+                border-black
+              "
+            >
+              <div
+                className="
+                  text-xs
+                  uppercase
+                  tracking-[0.3em]
+                  font-black
+                  text-black/60
+                  mb-5
+                "
+              >
+                START A PROJECT
+              </div>
+
+              <h3
+                className="
+                  text-4xl
+                  md:text-6xl
+                  font-black
+                  uppercase
+                  leading-[0.9]
+                  tracking-[-0.05em]
+                  text-black
+                  mb-6
+                "
+              >
+                LET'S BUILD
+                <br />
+                SOMETHING
+                <br />
+                BOLD.
+              </h3>
+
+              <p
+                className="
+                  text-lg
+                  md:text-xl
+                  text-black/70
+                  font-medium
+                  leading-relaxed
+                  max-w-lg
+                "
+              >
+                Open for freelance work, product
+                collaborations, AI integrations, and
+                full-stack development projects.
+              </p>
+            </div>
+
+            {/* RIGHT */}
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                p-8
+                md:p-12
+              "
+            >
+              <motion.a
+                whileHover={{
+                  x: -5,
+                  y: -5,
+                }}
+                href="mailto:nikhillathigara.work@gmail.com"
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
+                  w-full
+                  md:w-auto
+                  bg-black
+                  text-white
+                  border-4
+                  border-black
+                  px-8
+                  md:px-12
+                  py-5
+                  text-lg
+                  md:text-xl
+                  font-black
+                  uppercase
+                  shadow-[10px_10px_0px_#fff]
+                  hover:shadow-[14px_14px_0px_#fff]
+                  transition-all
+                "
+              >
+                LET'S WORK TOGETHER
+
+                <FiArrowUpRight className="text-2xl" />
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
-  )
-}
-
-
+  );
+};
 
 export default Services;
-

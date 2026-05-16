@@ -8,6 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        brutal: {
+          black: '#000000',
+          white: '#ffffff',
+          yellow: '#FAFF00',
+          pink: '#FF61F6',
+          blue: '#0066FF',
+          green: '#00FF66',
+          orange: '#FF6600',
+          purple: '#8B5CF6',
+          red: '#FF0000',
+          cream: '#FFF8E7',
+          light: '#F5F5F5',
+        },
         primary: {
           50: '#f5f3ff',
           100: '#ede9fe',
@@ -61,20 +74,56 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        alt: ['Clash Display', 'sans-serif'],
+        tight: ['Inter Tight', 'sans-serif'],
+      },
+      boxShadow: {
+        'brutal-sm': '4px 4px 0 #000000',
+        'brutal-md': '8px 8px 0 #000000',
+        'brutal-lg': '12px 12px 0 #000000',
+        'brutal-xl': '16px 16px 0 #000000',
+        'brutal-hover': '6px 6px 0 #000000',
+      },
+      borderWidth: {
+        '3': '3px',
+        '4': '4px',
+        '5': '5px',
+      },
+      borderRadius: {
+        'none': '0',
+        'sm': '2px',
       },
       animation: {
         'float': 'float 3s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marquee': 'marquee 25s linear infinite',
+        'marquee-reverse': 'marquee-reverse 25s linear infinite',
+        'bounce-short': 'bounce-short 0.5s ease-in-out',
+        'wiggle': 'wiggle 0.5s ease-in-out',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
-        }
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        'bounce-short': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      }
     },
   },
   plugins: [],

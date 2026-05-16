@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FiGithub, FiExternalLink, FiCode } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiGithub,
+} from "react-icons/fi";
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -12,308 +15,602 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   const projects = [
+
     {
-      id: 10,
-      title: "Cloud Family Salon ✂️✨",
+      title: "SMS Jewellers",
+      subtitle: "PREMIUM ECOMMERCE",
       description:
-        "A premium luxury salon website built with Next.js 15 and Tailwind CSS 4. Features a sophisticated design with gold accents, elegant typography, and smooth AOS animations. Optimized for performance and fully responsive, it includes interactive service highlights and a direct WhatsApp contact integration.",
-      image: "/images/project/salon.png",
+        "Luxury jewellery ecommerce platform with authentication and admin dashboard.",
+      image:
+        "/images/project/jewellery.png",
       technologies: [
-        "Next.js 15+",
-        "Tailwind CSS 4.0",
-        "Lucide React",
-        "AOS Animations",
+        "React.js",
+        "MongoDB",
+        "Node.js",
+      ],
+      category: "fullstack",
+      liveLink:
+        "https://sms-jewellery-house.vercel.app/",
+      accent: "#FF90E8",
+    },
+
+
+
+    {
+      title: "RAG Chatbot",
+      subtitle: "DOCUMENT Q&A SYSTEM",
+      description:
+        "AI-powered document chatbot using RAG pipeline for accurate query responses from PDFs and URLs.",
+      image:
+        "/images/project/ragChatbot.png",
+      technologies: [
+        "Node.js",
+        "Express",
+        "Qdrant",
+        "OpenAI",
+      ],
+      category: "genai",
+      liveLink: "https://rag-chat-bot-self.vercel.app/",
+      accent: "#8B5CF6",
+    },
+
+    {
+      title: "AI Persona",
+      subtitle: "MULTI-PERSONA CHATBOT",
+      description:
+        "Multi-persona AI chatbot with persona-specific response behavior and dynamic switching.",
+      image:
+        "/images/project/mentors-persona.jpg",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "OpenAI",
+      ],
+      category: "genai",
+      liveLink: "https://persona-bay-pi.vercel.app/",
+      accent: "#F97316",
+    },
+
+    {
+      title: "Cloud Family Salon",
+      subtitle: "LUXURY SALON WEBSITE",
+      description:
+        "Full-featured luxury salon website with scroll-triggered animations and responsive image gallery.",
+      image:
+        "/images/project/salon.png",
+      technologies: [
+        "Next.js",
+        "Tailwind",
+        "AOS",
       ],
       category: "frontend",
       liveLink: "https://cloud-family-salon.vercel.app/",
+      accent: "#FFD700",
     },
     {
-      id: 9,
-      title: "Premium Jewellery E-Commerce Platform",
+      title: "Figma to Code",
+      subtitle: "UI IMPLEMENTATION",
       description:
-        "Built a e-commerce platform featuring fluid micro-animations via Framer Motion and adaptive dark/light theming. Engineered a multi-layer caching architecture, Redis on the server paired with TanStack Query on the client, enabling optimistic UI updates and significantly faster load times. Shipped a real-time admin dashboard with live inventory tracking, lead analytics and Cloudinary-powered media delivery via global CDN.",
-      image: "/images/project/jewellery.png",
+        "Pixel-perfect conversion of complex Figma designs to production-quality React.js code.",
+      image:
+        "/images/project/ttl.png",
       technologies: [
         "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Redis",
-        "Tailwind CSS",
-      ],
-      category: "fullstack",
-      liveLink: "https://sms-jewellery-house.vercel.app/",
-    },
-    {
-      id: 1,
-      title: "TTL Supplements",
-      description:
-        "TTL Supplements is a modern, fully responsive LANDING PAGE built for a premium horse supplements brand. The website focuses on clean UI, smooth animations, and user-friendly experience across all devices. Built using React.js and Tailwind CSS, the project emphasizes component-based architecture, optimized layouts, and seamless responsiveness. Interactive elements and subtle motion effects enhance user engagement.",
-      image: "/images/project/ttl.png",
-      technologies: [
-        "React.js",
-        "Tailwind CSS",
+        "Tailwind",
+        "Framer Motion",
       ],
       category: "frontend",
-      githubLink: "https://github.com/Nikhil-Lathigara/TTL",
-      liveLink: "https://ttl-gold.vercel.app",
+      liveLink: "https://ttl-gold.vercel.app/",
+      accent: "#06B6D4",
     },
     {
-      id: 2,
-      title: "MacStrom Battle",
+      title: "Shrinathji Solar Enterprises",
+      subtitle: "Business WEBSITE",
       description:
-        "Built a scalable esports tournament platform with secure payment integration (Razorpay/IMB Gateway), low-latency live streaming using Hls.js, optimized Core Web Vitals, enhanced SEO with structured data, and mobile-first responsive UI with smooth Framer Motion animations.",
-      image: "/images/project/macstrom_logo.webp",
+        "Modern, responsive business website with custom animations and interactive features.",
+      image:
+        "/images/project/solar.png",
+      technologies: [
+        "React.js",
+        "Tailwind",
+        "Framer Motion",
+      ],
+      category: "frontend",
+      liveLink: "https://shrinathji-solar.vercel.app/",
+      accent: "#06B6D4",
+    },
+    {
+      title: "DevInsight",
+      subtitle: "AI CODEBASE INTELLIGENCE",
+      description:
+        "Full-stack AI platform with RAG pipeline for analyzing codebases using natural language queries.",
+      image:
+        "",
       technologies: [
         "Next.js",
-        "Tailwind CSS",
-        "Hls.js",
-        "Framer Motion",
-        "Razorpay",
-        "SEO Optimization",
-      ],
-      category: "frontend",
-      liveLink: "https://macstormbattle.vercel.app",
-    },
-    {
-      id: 3,
-      title: "Mentors Persona Chatbot",
-      description:
-        "Developed a persona-based chatbot that mimics unique personalities, enabling natural, engaging, and role-specific AI conversations tailored to users.",
-      image: "/images/project/mentors-persona.jpg",
-      technologies: [
-        "GenAI",
-        "OpenAI",
-        "React.js",
-        "Tailwind Css",
         "Node.js",
-        "API Integration",
+        "OpenAI",
+        "Qdrant",
       ],
-      category: "fullstack",
-      liveLink: "https://mentors-persona.vercel.app/",
-      githubLink: "https://github.com/Nikhil-Lathigara/Persona",
-    },
-    {
-      id: 4,
-      title: "GapShap",
-      description:
-        "Created a real-time chat app with private messaging using React, Node.js, and Socket.io.",
-      image: "../images/project/ChatApp.png",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      category: "fullstack",
+      category: "genai",
       liveLink: "#",
-      githubLink: "#",
+      accent: "#FFED00",
     },
+
     {
-      id: 5,
-      title: "Kitaab",
+      title: "PhotoGen",
+      subtitle: "AI IMAGE GENERATION",
       description:
-        "Designed RESTful API to manage books and developed a responsive React app for a book collection using React, Node.js, and MongoDB.",
+        "Real-time AI image generation platform using OpenAI and Gemini APIs.",
       image:
-        "../images/project/Kitaab.png",
-      technologies: ["React", "Node.js", "MongoDB", "API Integration"],
-      category: "fullstack",
-      liveLink: "https://book-collection-seven-mu.vercel.app/",
-      githubLink: "https://github.com/Nikhil-Lathigara/BookCollection",
-    },
-    {
-      id: 6,
-      title: "Short URL Service",
-      description:
-        "Developed a backend service to shorten URL's and handle redirection using Express and MongoDB, practicing API design and MongoDB operations.",
-      image:
-        "../images/project/ShortUrl.png",
-      technologies: ["Node.js", "MongoDB", "JWT"],
-      category: "backend",
+        "",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express",
+      ],
+      category: "genai",
       liveLink: "#",
-      githubLink: "https://github.com/Nikhil-Lathigara/url_shortner",
+      accent: "#00C2FF",
+    },
+  ];
+
+  const filters = [
+    {
+      name: "ALL",
+      value: "all",
     },
     {
-      id: 7,
-      title: "Currency Converter",
-      description:
-        "I made this app when I started learning React. This app use an external API to fetch live currency rates, An appealing currency converter with beautiful UI.",
-      image:
-        "../images/project/CurrencyConverter.png",
-      technologies: ["React", "Tailwind Css", "API Integration"],
-      category: "backend",
-      liveLink: "https://currency-converter-delta-ten.vercel.app/",
-      githubLink: "https://github.com/Nikhil-Lathigara/currencyConverter",
+      name: "GEN AI",
+      value: "genai",
     },
     {
-      id: 8,
-      title: "Password Generator",
-      description:
-        "Developed a customizable password generator in React with real-time strength indicators using external logic APIs.",
-      image:
-        "../images/project/PasswordGenerator.png",
-      technologies: ["React", "Tailwind Css"],
-      category: "backend",
-      liveLink: "https://password-generator-sepia-seven.vercel.app/",
-      githubLink: "https://github.com/Nikhil-Lathigara/passwordGenerator",
+      name: "FULL STACK",
+      value: "fullstack",
+    },
+    {
+      name: "FRONTEND",
+      value: "frontend",
     },
   ];
 
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter((project) => project.category === filter);
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+      : projects.filter(
+          (p) => p.category === filter
+        );
 
   return (
     <section
-      id="projects"
       ref={ref}
-      className="py-4 md:py-12 bg-gray-300 dark:bg-dark-900 relative z-40 "
+      className="
+        relative
+        py-20
+        md:py-28
+        bg-[#F8F5F0]
+        overflow-hidden
+      "
+      id="projects"
     >
-      <div className="section-container ">
+      {/* BACKGROUND TEXT */}
+      <div
+        className="
+          absolute
+          top-10
+          left-0
+          text-[18vw]
+          leading-none
+          font-black
+          uppercase
+          text-black/[0.04]
+          whitespace-nowrap
+          pointer-events-none
+        "
+      >
+        SELECTED WORK
+      </div>
+
+      {/* DECORATIVE BLOCKS */}
+      <div
+        className="
+          absolute
+          top-32
+          right-10
+          w-20
+          h-20
+          bg-[#FFED00]
+          border-4
+          border-black
+          rotate-12
+          hidden
+          lg:block
+        "
+      />
+
+      <div
+        className="
+          absolute
+          bottom-20
+          left-10
+          w-14
+          h-14
+          bg-[#00C2FF]
+          border-4
+          border-black
+          -rotate-12
+          hidden
+          lg:block
+        "
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          animate={
+            inView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {}
+          }
+          transition={{
+            duration: 0.5,
+          }}
+          className="
+            flex
+            flex-col
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+            gap-10
+            mb-16
+          "
         >
-          <h2 className="text-3xl font-semibold text-primary-500 mb-2">
-            My Work
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">
-            Recent Projects
-          </h3>
-          <p className="text-dark-500 dark:text-dark-300 max-w-3xl mx-auto">
-            Here are some of my recent projects. Each project represents my
-            skills and experience in different areas of web development.
-          </p>
-        </motion.div>
-
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-12"
-          >
-            <div className="inline-flex p-1 bg-gray-100 dark:bg-dark-700 rounded-lg">
-              <button
-                onClick={() => setFilter("all")}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "all"
-                  ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
-                  : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-                  }`}
-              >
-                All Projects
-              </button>
-              <button
-                onClick={() => setFilter("fullstack")}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "fullstack"
-                  ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
-                  : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-                  }`}
-              >
-                Full Stack
-              </button>
-              <button
-                onClick={() => setFilter("frontend")}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "frontend"
-                  ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
-                  : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-                  }`}
-              >
-                Frontend
-              </button>
-              <button
-                onClick={() => setFilter("backend")}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${filter === "backend"
-                  ? "bg-gradient-to-r from-purple-500/10 to-blue-500/10  border border-purple-500/20 text-primary-600 dark:text-primary-400 shadow-sm"
-                  : "text-dark-500 dark:text-dark-300 hover:text-dark-800 dark:hover:text-white"
-                  }`}
-              >
-                Backend
-              </button>
-
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="bg-white dark:bg-dark-700 rounded-xl shadow-md overflow-hidden group"
+          {/* LEFT */}
+          <div className="max-w-3xl">
+            {/* LABEL */}
+            <div
+              className="
+                inline-block
+                bg-[#FF90E8]
+                border-4
+                border-black
+                px-4
+                py-2
+                shadow-[6px_6px_0px_#000]
+                rotate-[-2deg]
+                mb-6
+              "
             >
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-dark-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
-                  <div className="space-x-2">
-                    {project.githubLink && <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-10 h-10 bg-dark-800/80 hover:bg-primary-600 rounded-full text-white transition-colors duration-300"
-                    >
-                      <FiGithub className="w-5 h-5" />
-                    </a>}
-                    {project.liveLink && <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-10 h-10 bg-dark-800/80 hover:bg-accent-600 rounded-full text-white transition-colors duration-300"
-                    >
-                      <FiExternalLink className="w-5 h-5" />
-                    </a>}
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="text-xl font-semibold mb-2 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
-                  {project.title}
-                </h4>
-                <p className="text-dark-500 dark:text-dark-300 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 ">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="inline-flex items-center px-3 py-1 text-xs font-medium bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20"
-                    >
-                      <FiCode className="w-3 h-3 mr-1" />
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              <span
+                className="
+                  text-black
+                  font-black
+                  uppercase
+                  tracking-wide
+                "
+              >
+                FEATURED PROJECTS
+              </span>
+            </div>
+
+            {/* TITLE */}
+            <h2
+              className="
+                text-5xl
+                md:text-7xl
+                lg:text-8xl
+                font-black
+                uppercase
+                leading-[0.9]
+                tracking-[-0.06em]
+                text-black
+                mb-6
+              "
+            >
+              SELECTED
+              <br />
+
+              <span
+                className="
+                  inline-block
+                  bg-black
+                  text-white
+                  px-3
+                  rotate-[-2deg]
+                "
+              >
+                WORK
+              </span>
+            </h2>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                max-w-2xl
+                text-lg
+                md:text-2xl
+                text-black/70
+                font-medium
+                leading-relaxed
+              "
+            >
+              A collection of full-stack
+              applications, AI products, and
+              interactive digital experiences built
+              with performance and bold visual
+              identity in mind.
+            </p>
+          </div>
+
+          {/* FILTERS */}
+          <div className="flex flex-wrap gap-3">
+            {filters.map((f) => (
+              <button
+                key={f.value}
+                onClick={() =>
+                  setFilter(f.value)
+                }
+                className={`
+                  px-5
+                  py-3
+                  border-4
+                  border-black
+                  font-black
+                  uppercase
+                  text-sm
+                  tracking-wide
+                  transition-all
+                  duration-150
+                  ${
+                    filter === f.value
+                      ? "bg-black text-white shadow-[5px_5px_0px_#FFED00]"
+                      : "bg-white text-black hover:bg-[#FFED00]"
+                  }
+                `}
+              >
+                {f.name}
+              </button>
+            ))}
+          </div>
         </motion.div>
+
+        {/* PROJECT GRID */}
+<div
+  className="
+    grid
+    grid-cols-1
+    lg:grid-cols-2
+    gap-6
+    lg:gap-8
+  "
+>
+  {filteredProjects.map((project, index) => (
+    <motion.div
+      key={project.id}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        delay: index * 0.08,
+      }}
+      whileHover={{
+        y: -6,
+      }}
+      className={`
+        group
+        relative
+        border-4
+        border-black
+        bg-white
+        overflow-hidden
+        shadow-[8px_8px_0px_#000]
+        transition-all
+        duration-200
+        ${
+          index % 2 === 0
+            ? "lg:rotate-[-1deg]"
+            : "lg:rotate-[1deg]"
+        }
+      `}
+    >
+      {/* PROJECT NUMBER */}
+      <div
+        className="
+          absolute
+          top-2
+          right-3
+          text-4xl
+          md:text-6xl
+          font-black
+          text-black/[0.06]
+          leading-none
+          pointer-events-none
+          z-10
+        "
+      >
+        {project.id}
+      </div>
+
+      {/* IMAGE */}
+      <div
+        className="
+          relative
+          h-[180px]
+          sm:h-[220px]
+          md:h-[260px]
+          overflow-hidden
+          border-b-4
+          border-black
+        "
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="
+            w-full
+            h-full
+            object-cover
+            transition-transform
+            duration-500
+            group-hover:scale-105
+          "
+        />
+
+        {/* CATEGORY BADGE */}
+        <div
+          className="
+            absolute
+            top-3
+            left-3
+            border-4
+            border-black
+            px-3
+            py-1
+            text-[10px]
+            md:text-xs
+            font-black
+            uppercase
+            shadow-[4px_4px_0px_#000]
+          "
+          style={{
+            background: project.accent,
+          }}
+        >
+          {project.subtitle}
+        </div>
+
+      </div>
+
+      {/* CONTENT */}
+      <div className="p-4 md:p-6">
+        {/* TITLE */}
+        <h3
+          className="
+            text-2xl
+            sm:text-3xl
+            md:text-4xl
+            font-black
+            uppercase
+            leading-[0.95]
+            tracking-[-0.05em]
+            text-black
+            mb-3
+          "
+        >
+          {project.title}
+        </h3>
+
+        {/* DESCRIPTION */}
+        <p
+          className="
+            text-sm
+            md:text-base
+            text-black/70
+            leading-relaxed
+            font-medium
+            mb-5
+            line-clamp-3
+          "
+        >
+          {project.description}
+        </p>
+
+        {/* TECH STACK */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="
+                bg-black
+                text-white
+                px-2
+                md:px-3
+                py-1
+                text-[10px]
+                md:text-xs
+                font-black
+                uppercase
+                tracking-wide
+              "
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* FOOTER */}
+        <div
+          className="
+            flex
+            items-center
+            justify-between
+            pt-4
+            border-t-4
+            border-black
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              md:text-xs
+              uppercase
+              tracking-[0.25em]
+              font-black
+              text-black/40
+            "
+          >
+           LIVE LINK
+          </span>
+
+          <div className="flex gap-2">
+            <motion.a
+              whileHover={{
+                rotate: 5,
+              }}
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                w-10
+                h-10
+                md:w-12
+                md:h-12
+                border-4
+                border-black
+                flex
+                items-center
+                justify-center
+                bg-[#FFED00]
+                text-black
+                hover:bg-black
+                hover:text-white
+                transition-all
+              "
+            >
+              <FiArrowUpRight />
+            </motion.a>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );

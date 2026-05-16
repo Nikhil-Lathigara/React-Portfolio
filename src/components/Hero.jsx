@@ -7,69 +7,196 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="pt-20 pb-12 md:pt-32 md:pb-20 bg-gray-100 dark:bg-dark-800 overflow-hidden relative z-40"
+      className="
+        relative
+        overflow-hidden
+        bg-[#F8F5F0]
+        pt-32
+        pb-20
+        md:pt-40
+        md:pb-28
+      "
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      {/* Brutalist Grid Background */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="grid grid-cols-6 h-full">
+          {Array.from({ length: 24 }).map((_, i) => (
+            <div key={i} className="border border-black" />
+          ))}
+        </div>
       </div>
-      <div className="section-container relative z-50">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      {/* Decorative Floating Blocks */}
+      <div className="absolute top-24 right-12 w-24 h-24 bg-[#FFED00] border-4 border-black rotate-12 hidden lg:block shadow-[8px_8px_0px_#000]" />
+
+      <div className="absolute bottom-20 left-10 w-16 h-16 bg-[#FF90E8] border-4 border-black -rotate-12 hidden lg:block shadow-[6px_6px_0px_#000]" />
+
+      <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-[#00C2FF] border-4 border-black rotate-6 hidden lg:block shadow-[4px_4px_0px_#000]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -70 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <div>
-              <motion.h2
-                className="text-lg md:text-xl font-medium text-primary-600 dark:text-primary-400"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-              >
-                Hello, I am
-              </motion.h2>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, rotate: -8, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: -3, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="
+                inline-block
+                bg-[#FF90E8]
+                border-4
+                border-black
+                px-5
+                py-2
+                shadow-[6px_6px_0px_#000]
+              "
+            >
+              <span className="font-black uppercase tracking-wide text-black">
+                HELLO, I AM
+              </span>
+            </motion.div>
+
+            {/* Main Heading */}
+            <div className="space-y-4">
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-4 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 2.5 }}
+                transition={{ delay: 0.2 }}
+                className="
+                  text-6xl
+                  md:text-5xl
+                  lg:text-[5rem]
+                  leading-[0.9]
+                  font-black
+                  uppercase
+                  tracking-[-0.05em]
+                  text-black
+                  typewriter
+                "
               >
-                <span className="gradient-text">Nikhil</span>{" "}
-                <span className="dark:text-white">Lathigara</span>
+                NIKHIL
+                <br />
+
+                <span
+                  className="
+                    inline-block
+                    bg-black
+                    text-white
+                    px-4
+                    rotate-[-2deg]
+                    typewriter
+                  "
+                >
+                  LATHIGARA
+                </span>
               </motion.h1>
-              <motion.h3
-                className="text-2xl md:text-3xl text-dark-600 dark:text-dark-200 font-medium"
-                initial={{ opacity: 0, y: 20 }}
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
+                transition={{ delay: 0.3 }}
+                className="
+                  inline-block
+                  bg-[#00C2FF]
+                  border-4
+                  border-black
+                  px-5
+                  py-3
+                  shadow-[6px_6px_0px_#000]
+                  rotate-[1deg]
+                "
               >
-                Full-Stack Web Developer
-              </motion.h3>
+                <h3
+                  className="
+                    text-lg
+                    md:text-2xl
+                    font-black
+                    uppercase
+                    text-black
+                  "
+                >
+                  FULL STACK DEVELOPER + AI ENGINEER
+                </h3>
+              </motion.div>
             </div>
 
+            {/* Description */}
             <motion.p
-              className="text-lg text-dark-500 dark:text-dark-300 max-w-xl"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ delay: 0.4 }}
+              className="
+                max-w-2xl
+                text-lg
+                md:text-xl
+                leading-relaxed
+                text-black
+                font-semibold
+              "
             >
-              MERN stack wizard fusing{" "}
-              <span className="gradient-text">
-                React.js, Next.js, Tailwind Css, Node.js and MongoDB
-              </span>{" "}
-              into sleek, high-performing apps, from E-commerce powerhouses,
-              admin dashboards to chat apps with real-time punch.
+              I build high-performance web applications, AI-powered products,
+              scalable backend systems, and bold digital experiences that stand
+              out from boring modern interfaces.
             </motion.p>
 
+            {/* Tags */}
             <motion.div
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 0.5 }}
+              className="flex flex-wrap gap-4"
+            >
+              {[
+                {
+                  text: "🚀 AVAILABLE FOR WORK",
+                  color: "bg-[#00FF85]",
+                },
+                {
+                  text: "🤖 AI SYSTEMS",
+                  color: "bg-[#FFED00]",
+                },
+                {
+                  text: "⚡ FULL STACK",
+                  color: "bg-[#FF90E8]",
+                },
+              ].map((tag) => (
+                <motion.div
+                  key={tag.text}
+                  whileHover={{
+                    rotate: 2,
+                    y: -4,
+                  }}
+                  className={`
+                    ${tag.color}
+                    border-4
+                    border-black
+                    px-4
+                    py-2
+                    shadow-[5px_5px_0px_#000]
+                    font-black
+                    uppercase
+                    text-black
+                    text-sm
+                    cursor-default
+                  `}
+                >
+                  {tag.text}
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-5 pt-2"
             >
               <Link
                 to="projects"
@@ -77,66 +204,153 @@ const Hero = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="btn-primary cursor-pointer text-sm font-medium"
+                className="
+                  group
+                  flex
+                  items-center
+                  bg-black
+                  text-white
+                  border-4
+                  border-black
+                  px-7
+                  py-4
+                  text-lg
+                  font-black
+                  uppercase
+                  cursor-pointer
+                  shadow-[8px_8px_0px_#FFED00]
+                  hover:-translate-x-1
+                  hover:-translate-y-1
+                  hover:shadow-[12px_12px_0px_#FFED00]
+                  transition-all
+                  duration-150
+                "
               >
-                View Projects <FiArrowRight className="ml-2" />
+                VIEW PROJECTS
+
+                <FiArrowRight className="ml-3 transition-transform group-hover:translate-x-1" />
               </Link>
-              <a href="https://drive.google.com/file/d/11q92L68tGbBzB5rGQl0sgIaDiv5i8-41/view?usp=drive_link" className="btn-secondary" download>
-                Download Resume <FiDownload className="ml-2" />
+
+              <a
+                href="https://drive.google.com/file/d/1QRQZRCLKJd7VQWZ6i6spunQmRW1pss49/view?usp=sharing"
+                download
+                className="
+                  flex
+                  items-center
+                  bg-white
+                  text-black
+                  border-4
+                  border-black
+                  px-7
+                  py-4
+                  text-lg
+                  font-black
+                  uppercase
+                  shadow-[8px_8px_0px_#000]
+                  hover:-translate-x-1
+                  hover:-translate-y-1
+                  hover:shadow-[12px_12px_0px_#000]
+                  transition-all
+                  duration-150
+                "
+              >
+                DOWNLOAD CV
+
+                <FiDownload className="ml-3" />
               </a>
             </motion.div>
           </motion.div>
 
+          {/* RIGHT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 70 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="relative z-50">
-              <motion.div
-                className="w-full h-80 md:h-96 lg:h-[500px] rounded-2xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 overflow-hidden flex items-center justify-center"
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.5, duration: 1.0 }}
+            {/* Main Card */}
+            <motion.div
+              initial={{ scale: 0.9, rotate: -2 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.4 }}
+              className="
+                relative
+                bg-white
+                border-4
+                border-black
+                shadow-[14px_14px_0px_#000]
+                p-5
+              "
+            >
+              {/* Inner Frame */}
+              <div
+                className="
+                  bg-[#FFED00]
+                  border-4
+                  border-black
+                  h-[350px]
+                  md:h-[500px]
+                  overflow-hidden
+                  flex
+                  items-center
+                  justify-center
+                "
               >
                 <DotLottieReact
                   src="https://lottie.host/89bc1fa2-55e0-469a-9314-840d93414eb2/4XlKBs7tOJ.lottie"
                   loop
                   autoplay
-                  alt="Developer Profile"
-                  className="w-full h-full object-cover mix-blend-overlay"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-800/50 to-transparent"></div>
+              </div>
+
+              {/* Floating Cards */}
+              <motion.div
+                whileHover={{
+                  rotate: 3,
+                  scale: 1.05,
+                }}
+                className="
+                  absolute
+                  -top-6
+                  -left-6
+                  bg-[#FF90E8]
+                  border-4
+                  border-black
+                  px-5
+                  py-3
+                  shadow-[6px_6px_0px_#000]
+                  font-black
+                  uppercase
+                  text-black
+                "
+              >
+                10+ PROJECTS
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.7, 0.4, 0.7],
+                whileHover={{
+                  rotate: -3,
+                  scale: 1.05,
                 }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 5,
-                  ease: "easeInOut",
-                }}
-              />
-
-              <motion.div
-                className="absolute -top-6 -left-6 w-40 h-40 bg-accent-500 rounded-full mix-blend-multiply filter blur-2xl opacity-70"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 0.4, 0.7],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 5,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-              />
-            </div>
+                className="
+                  absolute
+                  -bottom-6
+                  -right-6
+                  bg-[#00FF85]
+                  border-4
+                  border-black
+                  px-5
+                  py-3
+                  shadow-[6px_6px_0px_#000]
+                  font-black
+                  uppercase
+                  text-black
+                "
+              >
+                1.5+ YEARS
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
