@@ -15,7 +15,40 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
 
   const projects = [
+    {
+      title: "DevInsight",
+      subtitle: "AI CODEBASE INTELLIGENCE",
+      description:
+        "Full-stack AI platform with RAG pipeline for analyzing codebases using natural language queries.",
+      image:
+        "images/project/devinsight.png",
+      technologies: [
+        "Next.js",
+        "Node.js",
+        "OpenAI",
+        "Qdrant",
+      ],
+      category: "genai",
+      liveLink: "#",
+      accent: "#FFED00",
+    },
 
+    {
+      title: "PhotoGen",
+      subtitle: "AI IMAGE GENERATION",
+      description:
+        "Real-time AI image generation platform using OpenAI and Gemini APIs.",
+      image:
+        "images/project/photogen.png",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express",
+      ],
+      category: "genai",
+      liveLink: "#",
+      accent: "#00C2FF",
+    },
     {
       title: "SMS Jewellers",
       subtitle: "PREMIUM ECOMMERCE",
@@ -119,40 +152,22 @@ const Projects = () => {
       liveLink: "https://shrinathji-solar.vercel.app/",
       accent: "#06B6D4",
     },
-    {
-      title: "DevInsight",
-      subtitle: "AI CODEBASE INTELLIGENCE",
+{
+  title: "Photography Portfolio",
+      subtitle: "Creative Showcase",
       description:
-        "Full-stack AI platform with RAG pipeline for analyzing codebases using natural language queries.",
+        "Visually stunning photography portfolio website with dynamic galleries and smooth animations.",
       image:
-        "",
-      technologies: [
-        "Next.js",
-        "Node.js",
-        "OpenAI",
-        "Qdrant",
-      ],
-      category: "genai",
-      liveLink: "#",
-      accent: "#FFED00",
-    },
-
-    {
-      title: "PhotoGen",
-      subtitle: "AI IMAGE GENERATION",
-      description:
-        "Real-time AI image generation platform using OpenAI and Gemini APIs.",
-      image:
-        "",
+        "/images/project/photographyPortfolio.png",
       technologies: [
         "React.js",
-        "Node.js",
-        "Express",
+        "Tailwind",
+        "Framer Motion",
       ],
-      category: "genai",
-      liveLink: "#",
-      accent: "#00C2FF",
-    },
+      category: "frontend",
+      liveLink: "https://photographer-portfolio-brown-zeta.vercel.app/",
+      accent: "#06B6D4",
+}
   ];
 
   const filters = [
