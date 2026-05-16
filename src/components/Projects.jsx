@@ -21,7 +21,7 @@ const Projects = () => {
       description:
         "Full-stack AI platform with RAG pipeline for analyzing codebases using natural language queries.",
       image:
-        "images/project/devinsight.png",
+        "images/project/devinsights.png",
       technologies: [
         "Next.js",
         "Node.js",
