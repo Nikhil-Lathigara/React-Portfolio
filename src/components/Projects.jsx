@@ -25,6 +25,7 @@ const Projects = () => {
       technologies: [
         "Next.js",
         "Node.js",
+        "Redis",
         "OpenAI",
         "Qdrant",
       ],
@@ -43,7 +44,8 @@ const Projects = () => {
       technologies: [
         "React.js",
         "Node.js",
-        "Express",
+        "Gemini API",
+        "OpenAI API",
       ],
       category: "genai",
       liveLink: "#",
@@ -60,6 +62,7 @@ const Projects = () => {
         "React.js",
         "MongoDB",
         "Node.js",
+        "Redis"
       ],
       category: "fullstack",
       liveLink:
@@ -79,6 +82,7 @@ const Projects = () => {
       technologies: [
         "Node.js",
         "Express",
+        "Redis",
         "Qdrant",
         "OpenAI",
       ],
@@ -134,7 +138,7 @@ const Projects = () => {
       ],
       category: "frontend",
       liveLink: "https://ttl-gold.vercel.app/",
-      accent: "#06B6D4",
+      accent: "#10B981",
     },
     {
       title: "Shrinathji Solar Enterprises",
@@ -166,7 +170,7 @@ const Projects = () => {
       ],
       category: "frontend",
       liveLink: "https://photographer-portfolio-brown-zeta.vercel.app/",
-      accent: "#06B6D4",
+      accent: "#FF69B4",
 }
   ];
 
