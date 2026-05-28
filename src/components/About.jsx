@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const About = () => {
   const timeline = [
     {
-      year: "JAN 2026 - PRESENT",
+      year: "Feb 2026 - PRESENT",
       title: "Freelance Full-Stack Developer",
       description:
         "Building AI-powered applications and modern web solutions for clients worldwide.",
@@ -11,7 +11,7 @@ const About = () => {
       color: "bg-[#FFED00]",
     },
     {
-      year: "MARCH 2025 - NOV 2025",
+      year: "MARCH 2025 - April 2026",
       title: "Frontend Developer @ Macco Tech",
       description:
         `Optimized frontend performance by refactoring API calls and reducing unnecessary re-renders, decreasing Largest
