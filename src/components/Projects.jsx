@@ -19,7 +19,7 @@ const Projects = () => {
       title: "DevInsight",
       subtitle: "AI CODEBASE INTELLIGENCE",
       description:
-        "Full-stack AI platform with RAG pipeline for analyzing codebases using natural language queries.",
+        "Chat with your codebase. Ask natural questions about architecture, bugs, or dependencies — DevInsight surfaces answers in seconds by indexing your entire repo with a RAG pipeline.",
       image:
         "images/project/devinsights.png",
       technologies: [
@@ -38,7 +38,7 @@ const Projects = () => {
       title: "PhotoGen",
       subtitle: "AI IMAGE GENERATION",
       description:
-        "Real-time AI image generation platform using OpenAI and Gemini APIs.",
+        "Turn text into stunning visuals in real time. PhotoGen harnesses OpenAI and Gemini to generate production-ready images from a simple prompt.",
       image:
         "images/project/photogen.png",
       technologies: [
@@ -48,25 +48,32 @@ const Projects = () => {
         "OpenAI API",
       ],
       category: "genai",
-      liveLink: "#",
+      liveLink: "https://photo-gen1.netlify.app/",
       accent: "#00C2FF",
     },
     {
       title: "SMS Jewellers",
-      subtitle: "PREMIUM ECOMMERCE",
+      subtitle: "ECOMMERCE + GROWTH ENGINE",
       description:
-        "Luxury jewellery ecommerce platform with authentication and admin dashboard.",
+        "From browse to brilliance — a luxury jewellery ecommerce platform engineered for growth. SEO, AEO, and GEO optimized with best-in-class frontend and backend practices for speed, visibility, and conversions.",
       image:
         "/images/project/jewellery.png",
       technologies: [
         "React.js",
         "MongoDB",
         "Node.js",
-        "Redis"
+        "Redis",
+        "SEO",
+        "AEO",
+        "GEO",
+        "Content Writing",
+        "Core Web Vitals",
+        "Frontend Best Practices",
+        "Backend Best Practices"
       ],
       category: "fullstack",
       liveLink:
-        "https://sms-jewellery-house.vercel.app/",
+        "https://www.sonimuljijewels.in/",
       accent: "#FF90E8",
     },
 
@@ -76,7 +83,7 @@ const Projects = () => {
       title: "RAG Chatbot",
       subtitle: "DOCUMENT Q&A SYSTEM",
       description:
-        "AI-powered document chatbot using RAG pipeline for accurate query responses from PDFs and URLs.",
+        "Upload a PDF, drop a URL, ask anything. RAG Chatbot turns your documents into an intelligent Q&A system that answers with accuracy and context.",
       image:
         "/images/project/ragChatbot.png",
       technologies: [
@@ -95,7 +102,7 @@ const Projects = () => {
       title: "AI Persona",
       subtitle: "MULTI-PERSONA CHATBOT",
       description:
-        "Multi-persona AI chatbot with persona-specific response behavior and dynamic switching.",
+        "One chatbot, infinite personalities. AI Persona lets users switch between expert mentors — each with a unique tone and knowledge base — perfect for guided learning and dynamic conversations.",
       image:
         "/images/project/mentors-persona.jpg",
       technologies: [
@@ -112,7 +119,7 @@ const Projects = () => {
       title: "Cloud Family Salon",
       subtitle: "LUXURY SALON WEBSITE",
       description:
-        "Full-featured luxury salon website with scroll-triggered animations and responsive image gallery.",
+        "Book your glow-up. Cloud Family Salon is a luxury brand experience with cinematic scroll animations, a stunning gallery, and seamless browsing — because every salon deserves a digital storefront as polished as its services.",
       image:
         "/images/project/salon.png",
       technologies: [
@@ -128,7 +135,7 @@ const Projects = () => {
       title: "Figma to Code",
       subtitle: "UI IMPLEMENTATION",
       description:
-        "Pixel-perfect conversion of complex Figma designs to production-quality React.js code.",
+        "Designs don't ship themselves. Figma to Code transforms pixel-perfect Figma comps into production-ready React code — zero fidelity loss, full responsiveness, and Framer Motion polish.",
       image:
         "/images/project/ttl.png",
       technologies: [
@@ -144,7 +151,7 @@ const Projects = () => {
       title: "Shrinathji Solar Enterprises",
       subtitle: "Business WEBSITE",
       description:
-        "Modern, responsive business website with custom animations and interactive features.",
+        "Power your business with clean energy — and a clean website. A modern, animated brand presence that shines as bright as solar technology, built to inform, inspire, and convert.",
       image:
         "/images/project/solar.png",
       technologies: [
@@ -160,7 +167,7 @@ const Projects = () => {
   title: "Photography Portfolio",
       subtitle: "Creative Showcase",
       description:
-        "Visually stunning photography portfolio website with dynamic galleries and smooth animations.",
+        "Let the work speak. A minimalist, immersive portfolio that puts every pixel where it belongs — on the photography. Dynamic galleries, butter-smooth transitions, zero distractions.",
       image:
         "/images/project/photographyPortfolio.png",
       technologies: [
