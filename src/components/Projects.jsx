@@ -169,7 +169,7 @@ const Projects = () => {
       description:
         "Let the work speak. A minimalist, immersive portfolio that puts every pixel where it belongs — on the photography. Dynamic galleries, butter-smooth transitions, zero distractions.",
       image:
-        "/images/project/photographyPortfolio.png",
+        "/images/project/photographerPortfolio.png",
       technologies: [
         "React.js",
         "Tailwind",
